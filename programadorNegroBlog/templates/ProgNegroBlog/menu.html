@@ -1,0 +1,77 @@
+		
+<div id="portada">
+  <div id="titulo"><b>Programador Negro</b></div>
+</div>
+    <ul>
+      <li><a class="active" href="{% url 'inicio' %}">Start</a></li>
+      <li><a href="{% url 'tecnologias' %}">Technologies</a></li>
+      <li><a class="button" href="{% url 'contacto' %}">contactame</a></li>
+      <li><a class="button" href="{% url 'loadfile' %}">cargar archivo</a></li>
+      
+      {% if userSession %}
+      <li><a class="activeUser" >{{ userSession }}</a></li>
+      {% endif %}
+
+		</ul>
+    
+<style>
+ 
+#portada {
+    width: 100%;
+    height: 20%;
+    background-image: url("https://wallpaperaccess.com/full/680342.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+}
+
+#titulo {
+    font-family: Helvetica, sans-serif;
+    color: white;
+    font-size: 60px;
+    padding-left: 5%;
+    padding-top: 0.5%;
+}
+#portada  #titulo {
+  text-align: justify;
+
+  }
+
+  /* Menu principal de la pagina */
+.active {
+  background-color: darkred;
+}
+.activeUser {
+  background-color: black;
+  float: right;
+  border-left: 2px solid white;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  float: left;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover:not(.activeUser) {
+  background-color: #111;
+}
+
+</style>

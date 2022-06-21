@@ -1,0 +1,32 @@
+{% extends "ProgNegroBlog/base.html" %}
+{% block title %} Formulario {% endblock%}
+{% block content %}
+<script >
+
+  
+</script>
+<h1>Buscar producto aqui</h1>
+
+<form action="/buscar/" method="GET">
+  <label for=""> Nombre</label>
+  <input disabled="true" type="text" name="ProdNombre" id="inpBuscar"/><br><br>
+
+  <!-- lista desplegable con los productos de la base de datos-->
+  <label>
+    <input type="checkbox" id="cbox1"  value=""> Nombre</label>
+    <br>
+
+    <select name="prod" >
+      {% for item in queryNombre %}
+        <option value={{item.id}}>
+          {{item.titulo}}
+        </option>
+      {%endfor%}
+    </select><br>
+
+  <input  type="submit" value="buscar">
+
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends "ProgNegroBlog/base.html" %} <!-- permite heredar la plantilla padre que sera fija para todas las plantillas hijas -->
+{% block title %} Pagina de javascript {% endblock%}
+
+{% block content %}
+
+<h1>JavaScript</h1>
+		<p>primera pagina web django</p>
+<hr>
+
+{% if numbers %}
+	<h2>
+		<b>
+			{{ numbers }}
+		</b>
+	</h2>
+{% endif %}
+{% endblock %}

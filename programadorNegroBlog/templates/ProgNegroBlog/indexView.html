@@ -1,0 +1,43 @@
+{% extends "ProgNegroBlog/base.html" %} <!-- permite heredar la plantilla padre que sera fija para todas las plantillas hijas -->
+{% block title %} Pagina de inicio {% endblock%}
+
+{% block content %}
+
+<h1>Hola mundo. Este es un inicio.</h1>
+		<p>primera pagina web django</p>
+		<p>
+			
+			{% if numVisits != None %}
+				<div class="numUserSessionsPage" >	
+					numbers of visits in rhis page is {{ numVisits }} 📄
+				</div>
+			{% endif %}
+			<br>
+			<div class="numUserSessionsApp" >
+				numbers of visit in this application is {{ numVisitsApp }} 🧑‍🤝‍🧑
+				<br>
+				{{ usersLogged }}
+			</div>
+			
+			
+		</p>
+		<blockquote cite="http://www.worldwildlife.org/who/index.html">
+			For 50 years, WWF has been protecting the future of nature.
+			The world's leading conservation organization,
+			WWF works in 100 countries and is supported by
+			1.2 million members in the United States and
+			close to 5 million globally.
+			</blockquote>
+			<p> &#128512; &#128516; &#128525; &#128151; &#128509; </p>
+			
+			{% load static %}
+			<img src="{% static 'portada.png' %}" alt="imagen" /><br>
+			<label for="">Archivo: </label>
+			<input type="file">
+	{% if userSession %}
+			<h2>
+				{{ userSession }}
+			</h2>
+	{% endif %}
+{% endblock %}
+		

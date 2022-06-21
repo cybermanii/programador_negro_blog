@@ -1,0 +1,17 @@
+{% extends "ProgNegroBlog/base.html" %} <!-- permite heredar la plantilla padre que sera fija para todas las plantillas hijas -->
+{% block title %} Pagina de python {% endblock%}
+
+{% block content %}
+
+<h1>Python</h1>
+        <p> Como cambiar los colores de la terminal. </p>
+        <div id="cuadroCodigo">
+            <code class = "fondo">
+                <!-- sirve para insertar texto en formato de codigo de computadora -->
+                from colorama import init, Fore, Back <br>
+                init()
+                print(Fore.BLACK+"Hola Mundo")
+            </code>
+        </div>
+
+{% endblock %}

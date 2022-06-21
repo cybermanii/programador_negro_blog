@@ -1,0 +1,21 @@
+{% extends "ProgNegroBlog/base.html" %} <!-- permite heredar la plantilla padre que sera fija para todas las plantillas hijas -->
+{% block title %} Resultado Busqueda {% endblock%}
+
+{% block content %}
+    <h1>Resutados de la busqueda</h1>
+    <strong>Nombre del producto: </strong>{{elemento}} <br>
+    {% if articulos %}
+        <p>cantidad de articulos: {{articulos|length}}</p>
+        <ul>
+            {% for articulo in articulos %}
+            <li>
+                {{ articulo.titulo }} &nbsp; <span style="color: yellowgreen;">{{ articulo.descripcion }}</span> 
+            </li>
+            {% endfor %}
+            <!-- &nbsp = Non Breaking Space - permite juntar elementos sin que el navegador elimine algun espacio -->
+        </ul>
+
+    {% else %}
+        <p style="color: red;"> No se encontraron productos </p>
+    {% endif %}
+{% endblock %}

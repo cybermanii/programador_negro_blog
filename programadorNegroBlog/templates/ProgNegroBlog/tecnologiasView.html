@@ -1,0 +1,28 @@
+{% extends "ProgNegroBlog/base.html" %} <!-- permite heredar la plantilla padre que sera fija para todas las plantillas hijas -->
+{% block title %} Pagina de inicio {% endblock%}
+
+{% block content %}
+
+<div class="tecnologias" >
+
+    <div class="box-tecnologias" >
+        <a class="button" href="{% url 'python' %}">Python</a>
+    </div>
+
+    <div class="box-tecnologias" >
+        <a class="button" href="{% url 'javascript' %}">Javascript</a>
+    </div>
+
+    <div class="box-tecnologias" >
+        <a class="button" href="{% url 'tutoriales' %}">Tutoriales</a>
+    </div>
+
+    <div class="box-tecnologias" >
+        <a class="button" href="{% url 'capitulos' %}">Capitulos</a>
+    </div>
+    
+</div>
+
+
+{% endblock %}
+		

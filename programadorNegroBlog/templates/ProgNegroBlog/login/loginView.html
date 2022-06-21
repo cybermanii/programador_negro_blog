@@ -1,0 +1,56 @@
+{% extends "ProgNegroBlog/login/baseLogin.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+
+    <form class="login-container" action="/login/" method="POST">
+        {% csrf_token %}
+       
+        <table class="table-login" >
+<tr>
+    <td>
+        <h1>
+            Black
+            <br>
+            Programmer
+        </h1> 
+    </td>
+</tr>
+                    
+                <tr>
+                <td class="td-input" >
+                    
+                     <input id="btn-text" type="text" name="user" placeholder="&#128125 User" required>
+                </td>
+            </tr>
+            <tr>
+                <!-- <td>
+                    <label for="pass">
+                       Password
+                    </label>
+                </td> -->
+                <td class="td-input" >
+                    <input id="btn-text" type="password" name="pass" placeholder="🔑 Password" required>
+                </td>
+            </tr>
+            <tr>
+                <td  class="td-submit" >
+                    <div>
+                        <input id="btn-submit" type="submit" value="Entrar">
+                    </div>
+                </td>
+            </tr>
+        </table>
+       
+        {% if errorLogin %}
+            <div id="spam-login" >
+                <span>
+                    {{ errorLogin }}
+                </span>
+            </div>
+        {% endif %}
+    </form>
+     
+
+{% endblock %}

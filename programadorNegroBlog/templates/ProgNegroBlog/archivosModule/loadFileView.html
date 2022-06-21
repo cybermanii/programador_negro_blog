@@ -1,0 +1,22 @@
+
+{% extends "../../ProgNegroBlog/base.html" %} 
+{% load static %}
+
+{% block title %} carga de archivos {% endblock%}
+
+{% block content %}
+<form action="/loadfile/" method="POST">{% csrf_token %} 
+
+    <h2>
+        Cargar archivo:
+    </h2>
+    <label for="archivo">
+        <span style="color:white;">Selecionar archivo:</span><br>
+        <input type="file" name="archivo" id="archivo">
+
+        <input type="submit" value="Enviar">
+    </label>
+
+</form>
+
+{% endblock %}

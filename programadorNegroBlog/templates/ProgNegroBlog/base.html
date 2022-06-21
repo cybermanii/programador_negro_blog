@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+<head>
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'icons-marcapaginas-32.png' %}" sizes="32x32" />
+    <!-- <meta http-equiv="refresh" content="30" charset="UTF-8"> -->
+</head>
+    <body>
+        {% include "ProgNegroBlog/menu.html" %} <!-- se incluye la plantilla del menu o barra de navegacion-->
+        <div id="bodi">    
+            {% block content %}
+            {% endblock %} <!-- aqui se van a incluir las plantillas hijas, 
+                importante colocar  'extends "base.html" '
+                en la primera linea de la plantilla hija,
+            y colocar dentro de 'block content' el codigo html de la plantilla hija -->
+            
+<br><br>
+        </div>
+        <footer>
+            <p> Gracias por visitar esta pagina. Esto es uun pie de pagina. </p>
+        </footer>
+    </body>
+<style>
+   
+</style>
+</html>
