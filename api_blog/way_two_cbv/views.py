@@ -63,7 +63,7 @@ class Practice(APIView):
                 data= Movies.objects.filter(name__iexact = iexact_value)
 
                 if data.exists():
-                    return Response({'type': 'ok', 'detail': json_serializer(data)})
+                    return Response({'type': 'ok', 'detail': data.values()})
                 else:
                     return Response({'type': 'ok', 'detail': 'does not exist'})
             elif icontains_value is not None:
@@ -73,7 +73,7 @@ class Practice(APIView):
                 data= Movies.objects.filter(name__icontains = icontains_value)
 
                 if data.exists():
-                    return Response({'type': 'ok', 'detail': json_serializer(data)})
+                    return Response({'type': 'ok', 'detail': data.values()})
                 else:
                     return Response({'type': 'ok', 'detail': 'does not exist'})
             elif startswith_value is not None:
