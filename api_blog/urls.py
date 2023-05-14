@@ -19,23 +19,23 @@
 
 # urlpatterns = route.urls
 
-from django.urls import include
-from django.conf.urls import url
+from django.urls import include, re_path
+# from django.conf.urls import url
 from .way_two_cbv.views import movies, Practice
 from .way_three_fbv.views import movies_list
 from .way_one_serializers.routers import router
 
 urlpatterns = [  
     # SERIALIZERS
-    url('movies_wone/', include(router.urls)),
+    re_path('movies_wone/', include(router.urls)),
     
     # FUNCTION BASED VIEWS
-    url('movies_wthree/', movies_list),
+    re_path('movies_wthree/', movies_list),
 
     # CLASS BASED VIEWS
-    url('movies_wtwo/', movies.as_view()),
+    re_path('movies_wtwo/', movies.as_view()),
 
     # - - Practice filter methods in ORM Django
-    url('practice_filter/', Practice.as_view()),
+    re_path('practice_filter/', Practice.as_view()),
 
 ]

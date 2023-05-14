@@ -1,4 +1,4 @@
-import black
+# import black
 from django.db import models
 
 class Types(models.Model):

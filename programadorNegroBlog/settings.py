@@ -37,8 +37,8 @@ USER_SESSIONS = list()
 # Application definition
 
 INSTALLED_APPS = [
-    'admin_interface',
-    'colorfield',
+    # 'admin_interface',
+    # 'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'corsheaders', 
     'api_blog',
     # 'tecnologias',
+    # 'users.apps.UsersConfig',
 
 ]
 
@@ -99,11 +100,12 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE':'django.db.backends.mysql',
-        'NAME':'pn_blog',
+        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'NAME':'pn_app_db',
         'USER':'root',
         'PASSWORD':'root',
         'HOST':'localhost',
+        'PORT': '5432',
         
     },
     
@@ -148,6 +150,6 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    BASE_DIR +"/"+ "static",
+    os.path.join(BASE_DIR, "static"),
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
