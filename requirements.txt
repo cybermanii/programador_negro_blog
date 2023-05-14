@@ -3,3 +3,4 @@ django-rest-framework
 django-cors-headers
 # mysqlclient
 psycopg2-binary
+Pillow

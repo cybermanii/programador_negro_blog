@@ -37,8 +37,6 @@ USER_SESSIONS = list()
 # Application definition
 
 INSTALLED_APPS = [
-    # 'admin_interface',
-    # 'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,9 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders', 
     'api_blog',
-    # 'tecnologias',
-    # 'users.apps.UsersConfig',
-
+    'tecnologias',
 ]
 
 X_FRAME_OPTIONS='SAMEORIGIN'
@@ -152,4 +148,3 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
